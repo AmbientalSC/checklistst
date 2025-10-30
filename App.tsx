@@ -20,6 +20,8 @@ type AuthStatus = 'loading' | 'authenticated' | 'unauthenticated';
 
 
 const App: React.FC = () => {
+    // Vite provides BASE_URL via import.meta.env; TS may not have the typing in this project, so coerce to any
+    const BASE_URL = (import.meta as any).env?.BASE_URL || '/';
     // FIREBASE HOOKS
     const { users, getUserByEmailAddress, createUser: createUserInFirestore, updateUser: updateUserInFirestore, deleteUser: deleteUserInFirestore } = useUsers();
     const { units, createUnit: createUnitInFirestore, updateUnit: updateUnitInFirestore, deleteUnit: deleteUnitInFirestore } = useUnits();
@@ -431,7 +433,7 @@ const LoginView: React.FC<LoginViewProps> = ({ onLogin, error }) => {
         <div className="flex items-center justify-center min-h-screen bg-slate-100">
             <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-lg">
                 <div className="text-center">
-                    <img src="/ambiental.svg" alt="Ambiental - TST" className="mx-auto h-16 w-auto mb-4" />
+                    <img src={`${BASE_URL}ambiental.svg`} alt="Ambiental - TST" className="mx-auto h-16 w-auto mb-4" />
                     <p className="mt-2 text-sm text-slate-500">Faça login para continuar</p>
                 </div>
                 <form className="space-y-6" onSubmit={handleSubmit}>
@@ -504,8 +506,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, setActiveView, currentUse
 
     return (
         <nav className="w-64 bg-white shadow-lg flex flex-col min-h-screen sticky top-0">
-            <div className="flex items-center justify-center h-20 border-b border-slate-200">
-                <img src="/ambiental.svg" alt="Ambiental - TST" className="h-10 w-auto" />
+                <div className="flex items-center justify-center h-20 border-b border-slate-200">
+                <img src={`${BASE_URL}ambiental.svg`} alt="Ambiental - TST" className="h-10 w-auto" />
             </div>
             <ul className="flex-1 mt-4">
                 {filteredNavItems.map(item => (
