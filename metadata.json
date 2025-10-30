@@ -1,0 +1,5 @@
+{
+  "name": "SafetyCheck Pro",
+  "description": "A comprehensive checklist management system for safety technicians. Create templates, manage units and users, conduct inspections, and automatically notify managers of non-compliance issues.",
+  "requestFramePermissions": []
+}

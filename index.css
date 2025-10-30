@@ -1,0 +1,51 @@
+/* Custom styles for SafetyCheck Pro */
+
+/* Global body styles */
+body {
+  background-color: #f1f5f9; /* slate-100 */
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9; /* slate-100 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8; /* slate-400 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* slate-500 */
+}
+
+/* Responsive helpers for mobile UX */
+@media (max-width: 768px) {
+  /* Make main content full width when sidebar hidden */
+  .mobile-full {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* Sticky footer for mobile checklist submit */
+.sticky-footer {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 0.75rem;
+  box-shadow: 0 -6px 16px rgba(2,6,23,0.06);
+  z-index: 40;
+}
+
+/* Mobile-friendly step card */
+.step-card {
+  min-height: 220px;
+}
